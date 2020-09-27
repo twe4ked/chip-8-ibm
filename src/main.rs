@@ -23,12 +23,9 @@ fn main() {
     let mut frame_buffer = vec![false; WIDTH * HEIGHT];
 
     // Load the IBM logo ROM into memory, starting at PROGRAM_OFFSET.
-    IBM_LOGO_ROM
-        .iter()
-        .enumerate()
-        .for_each(|(address, value)| {
-            memory.write(address as u16 + PROGRAM_OFFSET, *value);
-        });
+    for (address, value) in IBM_LOGO_ROM.iter().enumerate() {
+        memory.write(address as u16 + PROGRAM_OFFSET, *value);
+    }
 
     // Fetch, decode, execute loop.
     loop {
