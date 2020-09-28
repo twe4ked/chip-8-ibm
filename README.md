@@ -1,5 +1,5 @@
 # CHIP-8 IBM Logo
 
 ```
-$ cargo run
+$ cargo run < ibm-logo.ch8 > out.pbm
 ```
